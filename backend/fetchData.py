@@ -3,7 +3,7 @@ import json
 import pandas as pd
 
 def main(ticker):
-    df = pd.read_csv("./ticker.txt", sep="\t", index_col=False)
+    df = pd.read_csv("../ticker.txt", sep="\t", index_col=False)
     print(df.head())
 
     data = df.loc[df["ticker"] == ticker.lower()]

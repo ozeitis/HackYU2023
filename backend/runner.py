@@ -1,11 +1,11 @@
 import json
-import matplotlib.pyplot as plt
 import numpy as np
 import matplotlib.dates as mdates
-import pandas as pd
 
 
 def process(percentage):
+    output = {}
+    
     doc_file = open("d.json", "r")
     doc = json.loads(doc_file.read())
     print(doc["entityName"])
@@ -37,14 +37,14 @@ def process(percentage):
         if len(x) == 0:
             continue
 
-        fig, ax = plt.subplots()
+        #fig, ax = plt.subplots()
 
         # Plot all the data
-        ax.plot(x, y, marker='o', linestyle='')
+        #ax.plot(x, y, marker='o', linestyle='')
         # Plot only the last data point
-        ax.plot(x[-1], y[-1], marker='o', linestyle='')
+        #ax.plot(x[-1], y[-1], marker='o', linestyle='')
 
-        fig.autofmt_xdate()
+        #fig.autofmt_xdate()
 
         # Convert dates to numerical format for regression
         x_numerical = mdates.datestr2num(x)
@@ -53,7 +53,7 @@ def process(percentage):
         m, b = np.polyfit(x_numerical, y, 1)
 
         # Plot line of best fit
-        ax.plot(x, m * x_numerical + b, color='red')
+        #ax.plot(x, m * x_numerical + b, color='red')
 
         # Calculate distance between latest point and line of best fit
         latest_point = np.array([x_numerical[-1], y[-1]])
@@ -65,8 +65,6 @@ def process(percentage):
         if distance > threshold_distance:
             # Save the plot if the distance is greater than the threshold
             print("Threshold " + str(threshold_distance))
-            print(fact_obj[fact]["label"])
-
-            plt.savefig(f"output_{fact}.png")
-        else:
-            plt.close(fig)  # Close the figure if not saved
+            print(fact_obj[fact]["label"])# Close the figure if not saved
+            output[fact_label] = [x,y]
+    return output
