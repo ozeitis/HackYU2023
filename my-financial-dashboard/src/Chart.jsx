@@ -1,10 +1,10 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import { createChart, ColorType } from "lightweight-charts";
-import { Box } from '@mui/material';
+import { Box, DataGrid } from "@mui/material";
 import { VictoryChart, VictoryLine, VictoryTheme, VictoryBar } from "victory";
+import { Table, TableBody, TableRow, TableCell } from '@mui/material';
 
 export const Chart = ({ data }) => {
-
   return (
     <Box
       display="flex"
@@ -30,6 +30,16 @@ export const Chart = ({ data }) => {
           x={"time"}
         />
       </VictoryChart>
+      <Table size="small">
+      <TableBody>
+        {data.map((item, index) => (
+          <TableRow key={index}>
+            <TableCell>{item.time}</TableCell>
+            <TableCell>{item.value}</TableCell>
+          </TableRow>
+        ))}
+      </TableBody>
+    </Table>
     </Box>
   );
 };
