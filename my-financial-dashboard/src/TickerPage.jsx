@@ -12,6 +12,7 @@ import {
   TextField,
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import Navbar from "./Navbar";
 
 function TickerPage(props) {
   let { ticker } = useParams();
@@ -58,6 +59,8 @@ function TickerPage(props) {
     : Object.keys(data);
 
   return (
+    <>
+    <Navbar />
     <Container maxWidth="lg">
       <Box my={4}>
         <Typography variant="h3" align="center">
@@ -101,6 +104,7 @@ function TickerPage(props) {
         )}
       </Box>
     </Container>
+    </>
   );
 }
 
