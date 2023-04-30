@@ -1,6 +1,6 @@
 import { OutlinedInput, TextField, Button, FormControl } from '@mui/material';
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function Home(props) {
     return (
@@ -16,22 +16,22 @@ function Home(props) {
 
 const Form = () => {
     const [inputValue, setInputValue] = useState('');
-    const history = useHistory();
+    const navigate = useNavigate()
   
     const handleSubmit = (event) => {
       event.preventDefault();
-      history.push(`/path/${inputValue}`);
+      navigate(`/ticker/${inputValue}`);
     };
   
     return (
       <form onSubmit={handleSubmit}>
         <TextField
-          label="Enter Value"
+          label="Enter Ticker"
           value={inputValue}
           onChange={(event) => setInputValue(event.target.value)}
         />
         <Button type="submit" variant="contained" color="primary">
-          Submit
+          Go
         </Button>
       </form>
     );
