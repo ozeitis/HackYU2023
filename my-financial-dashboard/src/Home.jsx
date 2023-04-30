@@ -39,7 +39,7 @@ const Form = () => {
       width="70%"
       mx="auto"
     >
-      <h1>Enter stock ticker</h1>
+      <h1>Enter Stock Ticker</h1>
       <form onSubmit={handleSubmit} style={{ width: "100%" }}>
         <Box my={2}>
           <Autocomplete
