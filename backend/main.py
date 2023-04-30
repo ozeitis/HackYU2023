@@ -28,7 +28,7 @@ def read_root():
     return {"Hello": "World"}
 
 
-@app.get("/get/{ticker}")
+@app.get("/ticker/{ticker}")
 def read_item(ticker: str, percentage: int = 50):
     scrape(ticker)
     return process(percentage)
