@@ -1,5 +1,5 @@
 import { TextField, Button, Box, Autocomplete } from '@mui/material';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 function Home(props) {
@@ -10,13 +10,20 @@ function Home(props) {
 
 const Form = () => {
     const [inputValue, setInputValue] = useState('');
+    const [options, setOptions] = useState([]);
     const navigate = useNavigate()
 
-    const options = ['Option 1', 'Option 2', 'Option 3'];
     const handleSubmit = (event) => {
         event.preventDefault();
         navigate(`/ticker/${inputValue}`);
     };
+
+    useEffect(() => {
+        fetch('/tickers')
+          .then((response) => response.json())
+          .then((data) => setOptions(data.options))
+          .catch((error) => console.log(error));
+      }, []);
 
     return (
         <Box
@@ -47,7 +54,7 @@ const Form = () => {
                 </Box>
                 <Box my={2}>
                     <Button type="submit" variant="contained" color="primary">
-                        Submit
+                        Go
                     </Button>
                 </Box>
             </form>
