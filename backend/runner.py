@@ -2,7 +2,6 @@ import json
 import numpy as np
 import matplotlib.dates as mdates
 
-
 def process(percentage):
     output = {}
     
@@ -67,4 +66,4 @@ def process(percentage):
             print("Threshold " + str(threshold_distance))
             print(fact_obj[fact]["label"])# Close the figure if not saved
             output[fact_label] = [x,y]
-    return output
+    return output.copy()

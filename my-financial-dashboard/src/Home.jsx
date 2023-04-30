@@ -19,9 +19,9 @@ const Form = () => {
     };
 
     useEffect(() => {
-        fetch('/tickers')
+        fetch('http://localhost:8000/tickers')
           .then((response) => response.json())
-          .then((data) => setOptions(data.options))
+          .then((data) => setOptions(data.tickers))
           .catch((error) => console.log(error));
       }, []);
 
