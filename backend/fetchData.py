@@ -9,7 +9,7 @@ def main(ticker):
     data = df.loc[df["ticker"] == ticker.lower()]
     print(data)
 
-    cik = str(data["cik"][0])
+    cik = str(data["cik"].iloc[0])
     print(cik)
     while len(cik) < 10:
         cik = "0" + cik

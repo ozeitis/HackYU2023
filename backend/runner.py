@@ -29,41 +29,21 @@ def process(percentage):
                 y.append(datum["val"]/1_000_000)
                 x.append(datum["end"])
 
-        # print("10-K:")
-        # for item in ten_ks:
-        #     print(item["end"] + ", " + item["form"] + ": " + str(item["val"]))
-
         if len(x) == 0:
             continue
 
-        #fig, ax = plt.subplots()
-
-        # Plot all the data
-        #ax.plot(x, y, marker='o', linestyle='')
-        # Plot only the last data point
-        #ax.plot(x[-1], y[-1], marker='o', linestyle='')
-
-        #fig.autofmt_xdate()
-
-        # Convert dates to numerical format for regression
         x_numerical = mdates.datestr2num(x)
-
-        # Calculate line of best fit
         m, b = np.polyfit(x_numerical, y, 1)
 
-        # Plot line of best fit
-        #ax.plot(x, m * x_numerical + b, color='red')
+        # Create a new list to store the reformatted data
+        reformatted_data = []
 
-        # Calculate distance between latest point and line of best fit
-        latest_point = np.array([x_numerical[-1], y[-1]])
-        line_point = np.array([x_numerical[-1], m * x_numerical[-1] + b])
-        distance = np.linalg.norm(latest_point - line_point)
+        # Iterate over x and y, and add a dictionary with keys "time" and "value" to the new list
+        for i in range(len(x)):
+            reformatted_data.append({"time": x[i], "value": y[i]})
 
-        print("Distance between latest point and line of best fit:", distance)
-        threshold_distance = (m * x_numerical[-1] + b) * percentage
-        if distance > threshold_distance:
-            # Save the plot if the distance is greater than the threshold
-            print("Threshold " + str(threshold_distance))
-            print(fact_obj[fact]["label"])# Close the figure if not saved
-            output[fact_label] = [x,y]
-    return output.copy()
+        # Add the reformatted data to the output dictionary with the fact_label as the key
+        output[fact_label] = reformatted_data
+
+    # Return the output as a JSON object
+    return output
