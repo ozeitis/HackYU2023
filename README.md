@@ -12,4 +12,4 @@ The interface was designed to be intuitive, maintainable, and highlight the impo
 
 
 ## About
-This project was created by [Eliyahu Levy](https://github.com/EliMLevy), [Oze Botach](https://github.com/Ozeitis) , [Azriel Bachrach](https://github.com/azrielb1), Max Friedman, Koby Rosinsky, Asher Kirshtein, Nechama Buchbinder, and [Yaakov Baker](https://github.com/YaakovBaker). It was built in 8 hours during the 2023 YU Hackathon. We are proud to share that after being judged against several other teams, it was awarded first place in the competition. 
+This project was created by [Eliyahu Levy](https://github.com/EliMLevy), [Oze Botach](https://github.com/Ozeitis) , [Azriel Bachrach](https://github.com/azrielb1), Max Friedman, Koby Rosinsky, Asher Kirshtein, [Nechama Buchbinder](https://github.com/buchbindern), and [Yaakov Baker](https://github.com/YaakovBaker). It was built in 8 hours during the 2023 YU Hackathon. We are proud to share that after being judged against several other teams, it was awarded first place in the competition. 
