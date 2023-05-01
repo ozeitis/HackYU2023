@@ -35,6 +35,20 @@ def process(percentage):
         x_numerical = mdates.datestr2num(x)
         m, b = np.polyfit(x_numerical, y, 1)
 
+        # To determine if the most recent report contained anomaloous data we can do the following:
+        # Calculate distance between latest point and line of best fit as follows:
+        # latest_point = np.array([x_numerical[-1], y[-1]])
+        # line_point = np.array([x_numerical[-1], m * x_numerical[-1] + b])
+        # distance = np.linalg.norm(latest_point - line_point)
+        
+        # Then we can calculate the distribution of distances from the line of best fit for all 
+        # datapoints
+        
+        # Finaly, we can see if the distance of the last data point to the line of best fit
+        # is 2 standard deviations away from the mean distance. 
+        # We could give the user the option to only view statistics where the most recent data
+        # broke away from the trend
+
         # Create a new list to store the reformatted data
         reformatted_data = []
 
