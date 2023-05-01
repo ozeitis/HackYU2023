@@ -6,9 +6,10 @@ SEC Filing Analyzer is a web application that automates the process of finding a
 
 
 ## Features
-Users can enter a stock ticker and the application fetches, parses and analyzes the data to find unusual movements in important financial metrics.
-The application compares the new earnings with previous data to identify anomalies.
-Users are presented with a clean interface that shows important metrics with unusual moves.
+Users can enter a stock ticker and the application fetches, parses and analyzes data fetched from the SEC EDGAR database to find unusual movements in important financial metrics.
+The application compares the new 10-k filings with previous data to identify anomalies and regression analysis.
+The interface was designed to be intuitive, maintainable, and highlight the important metrics that have made unusual moves.
+
 
 ## About
-This project was created by Eli Levy, Oze Botach, Azriel Bachrach, Max Friedman, Koby Rosinsky, Asher Kirshtein, Nechama Buchbinder, and Yaakov Baker. It was built in 8 hours during the 2023 YU Hackathon. We are proud to share that after being judged against several other teams, it was awarded first place in the competition. 
+This project was created by [Eliyahu Levy](https://github.com/EliMLevy), [Oze Botach](https://github.com/Ozeitis) , [Azriel Bachrach](https://github.com/azrielb1), Max Friedman, Koby Rosinsky, Asher Kirshtein, Nechama Buchbinder, and [Yaakov Baker](https://github.com/YaakovBaker). It was built in 8 hours during the 2023 YU Hackathon. We are proud to share that after being judged against several other teams, it was awarded first place in the competition. 
