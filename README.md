@@ -6,9 +6,9 @@ SEC Filing Analyzer is a web application that automates the process of finding a
 
 
 ## Features
-Users can enter a stock ticker and the application fetches, parses and analyzes data fetched from the SEC EDGAR database to find unusual movements in important financial metrics.
+Users can enter a stock ticker and the application fetches, parses and analyzes data fetched from the SEC EDGAR database to find anomalies in important financial metrics.
 The application compares the new 10-k filings with previous data to identify anomalies and regression analysis.
-The interface was designed to be intuitive, maintainable, and highlight the important metrics that have made unusual moves.
+The interface was designed to be intuitive, maintainable, and highlight the important metrics that caused anomalies.
 
 
 ## About
